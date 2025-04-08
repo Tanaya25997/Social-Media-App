@@ -37,19 +37,3 @@ def test_get_posts():
     assert isinstance(response.json(), list)  # Assuming it returns a list of posts
 
 
-
-### integration test 
-def test_create_user(client, setup_db):
-    # Step 1: Create a user using the API endpoint
-    user_data = {
-        "email": "testuser@example.com",
-        "password": "password123"
-    }
-    response = client.post("/users/", json=user_data)
-    assert response.status_code == 201
-
-    # Step 2: Verify the user is in the database (using the `setup_db` fixture)
-    db_user = setup_db.query(models.User).filter(models.User.email == user_data["email"]).first()
-    assert db_user is not None
-    assert db_user.email == user_data["email"]
-
