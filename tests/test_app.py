@@ -7,12 +7,13 @@ def test_read_main():
     response = client.get("/")
     assert  response.status_code == 200
     assert response.json() == {"Message" : "Hi"}  # Replace with actual response
+
 '''
 #Step 1: Create a new user for testing
 def test_create_test_user():
     # Assuming you have a registration route in your app for creating users
     user_data = {
-        "email": "abcde@gmail.com", 
+        "email": "abcdefg@gmail.com", 
         "password": "password"
     }
     response = client.post("/users", json=user_data)  # Assuming the registration route is "/register"
@@ -21,9 +22,10 @@ def test_create_test_user():
     return user_data["email"]
 '''
 
+
 # Step 1: Get the authentication token
 def get_token():
-    login_data = {"username": "abcde@gmail.com", "password": "password"}
+    login_data = {"username": "abcdefg@gmail.com", "password": "password"}
     response = client.post("/login", data=login_data)
     return response.json().get("access_token")
 
