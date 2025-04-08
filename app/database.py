@@ -4,6 +4,7 @@ from sqlalchemy.orm import DeclarativeBase
 
 
 
+
 SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:password@localhost/fastapi_social_network'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL) ### engine established connection
