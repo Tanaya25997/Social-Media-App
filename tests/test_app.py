@@ -53,9 +53,3 @@ def test_create_user(client, setup_db):
     assert db_user is not None
     assert db_user.email == user_data["email"]
 
-
-# Create a test client to interact with FastAPI
-@pytest.fixture(scope="module")
-def client():
-    with TestClient(app) as client:
-        yield client
